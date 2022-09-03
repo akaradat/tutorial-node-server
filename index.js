@@ -15,7 +15,10 @@ const server = http.createServer(async (req, res) => {
     res.end('hello world');
 
     return;
-  } else if (req.url === '/api/courses' || req.url === '/api/courses/') {
+  } else if (
+    req.url.toLowerCase() === '/api/courses' ||
+    req.url.toLowerCase() === '/api/courses/'
+  ) {
     if (req.method === 'GET') {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
